@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomeScreen from './components/HomeScreen';
+import InstructionsScreen from './components/InstructionsScreen';
+import Header from './components/Header';
+import FaceRecognitionScreen from './screens/FaceRecognitionScreen';
+import IdentifyObjectsScreen from './screens/IdentifyObjectsScreen';
+import ReadingModeScreen from './screens/ReadingModeScreen';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header/>
+      <Routes>
+      <Route path="/reading" element={<ReadingModeScreen />} />
+        <Route path="/face-recognition" element={<FaceRecognitionScreen />} />
+        <Route path="/identify-objects" element={<IdentifyObjectsScreen />} />
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/instructions" element={<InstructionsScreen />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
