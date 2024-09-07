@@ -9,13 +9,13 @@ const InstructionsScreen = () => {
     if (supported) {
       giveInstructions();
     } 
-    // Clean up the speech synthesis when the component unmounts
+   
     return () => {
       if (speaking) {
         cancel();
       }
     };
-  }, [speaking, supported]); // Added 'supported' to the dependency array
+  }, [speaking, supported]);
 
   const giveInstructions = () => {
     const instructions = `

@@ -24,16 +24,16 @@ const VoiceCommandButton = () => {
       case 'identify':
         navigate('/identify-objects');
         console.log("Identify Objects Triggered...");
-        //fetchIdentifyObjectsAPI();
+        
         break;
       case 'faces':
         speak({ text: "Face Recognition started please wait" });
         navigate('/face-recognition');
-        //fetchRecognizeFacesAPI();
+        
         break;
       case 'reading':
         navigate('/reading');
-        //fetchReadingModeAPI();
+        
         break;
       case 'instruction':
         giveInstructions();
